@@ -2,33 +2,46 @@
 Es posible que el codigo generado no sea completamente correcto. Si encuentra
 errores por favor reportelos en el foro (http://pseint.sourceforge.net). */
 
-#include<stdio.h>
+#include <stdio.h>
+#define VALOR_HORA_CAT_1_PESOS 50
+#define VALOR_HORA_CAT_2_PESOS 70
+#define VALOR_HORA_CAT_3_PESOS 80
 
-int main() {
-	int categoria1;
-	int categoria2;
-	int categoria3;
-	int categoriaingresada;
-	int horastrabajadasingresadas;
+/*
+Ingresar las horas trabajadas por un empleado y su categoría, calcular su sueldo sabiendo que los empleados de la categoría 1 cobran $50, la 2 cobra $ 70 y la 3 cobra $ 80.
+*/
+
+int main(void) {
+
+	unsigned char categoria_ingresada;
+	unsigned char horas_trabajadas_ingresadas;
 	float sueldo;
-	categoria1 = 50;
-	categoria2 = 70;
-	categoria3 = 80;
+	
 	printf("Ingrese las horas trabajadas por el trabajador: \n");
-	scanf("%i", &horastrabajadasingresadas);
+	scanf("%hhu", &horas_trabajadas_ingresadas);
+	
 	printf("Ingrese la categoria del trabajador (1, 2 o 3): \n");
-	scanf("%i", &categoriaingresada);
-	switch (categoriaingresada) {
+	scanf("%hhu", &categoria_ingresada);
+	
+	switch (categoria_ingresada) {
 	case 1:
-		sueldo = horastrabajadasingresadas*categoria1;
+
+		sueldo = horas_trabajadas_ingresadas * VALOR_HORA_CAT_1_PESOS;
 		break;
 	case 2:
-		sueldo = horastrabajadasingresadas*categoria2;
+
+		sueldo = horas_trabajadas_ingresadas * VALOR_HORA_CAT_2_PESOS;
 		break;
+	case 3:
+
+		sueldo = horas_trabajadas_ingresadas * VALOR_HORA_CAT_3_PESOS;
 	default:
-		sueldo = horastrabajadasingresadas*categoria3;
+		
+		printf("Categoría ingresada invalida.");
 	}
-	printf("El sueldo por trabajar %i hora\\s, un trabajador de categoria %i es de $%f.\n", horastrabajadasingresadas, categoriaingresada, sueldo);
+
+	printf("El sueldo por trabajar %hhu hora\\s, un trabajador de categoria %hhu es de $ %.2f. \n", horas_trabajadas_ingresadas, categoria_ingresada, sueldo);
+
 	return 0;
 }
 
