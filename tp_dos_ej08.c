@@ -7,19 +7,19 @@ Ingresar tres valores correspondientes al día, mes__ingresado y año de una fec
 int main (void) {
 
     unsigned char dia_ingresado;
-    unsigned char mes__ingresado;
+    unsigned char mes_ingresado;
     int ano_ingresado;  
 
     printf("Ingrese un año: \n>>> ");
     scanf("%d", &ano_ingresado);
 
     printf("Ingrese un mes: \n>>> ");
-    scanf("%hhu", &mes__ingresado);
+    scanf("%hhu", &mes_ingresado);
 
     printf("Ingrese un día: \n>>> ");
     scanf("%hhu", &dia_ingresado);
 
-    if (mes__ingresado == 1 || mes__ingresado == 3 || mes__ingresado == 5 || mes__ingresado == 7 || mes__ingresado == 8 || mes__ingresado == 10 || mes__ingresado == 12) {
+    if (mes_ingresado == 1 || mes_ingresado == 3 || mes_ingresado == 5 || mes_ingresado == 7 || mes_ingresado == 8 || mes_ingresado == 10 || mes_ingresado == 12) {
 
         if (dia_ingresado <= 31 && dia_ingresado > 0) {
 
@@ -30,7 +30,7 @@ int main (void) {
             printf("La fecha es invalida.");
         }
     }
-    else if (mes__ingresado == 4 || mes__ingresado == 6 || mes__ingresado == 9 || mes__ingresado == 11) {
+    else if (mes_ingresado == 4 || mes_ingresado == 6 || mes_ingresado == 9 || mes_ingresado == 11) {
 
         if (dia_ingresado <= 30 && dia_ingresado > 0) {
 
@@ -41,7 +41,7 @@ int main (void) {
             printf("La fecha es invalida.");
         }        
     }
-    else if (mes__ingresado == 2) {
+    else if (mes_ingresado == 2) {
 
         if ( (ano_ingresado % 4 == 0 && ano_ingresado % 100 != 0) || ano_ingresado % 400 == 0 )  {
 
